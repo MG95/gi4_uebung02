@@ -4,4 +4,4 @@ Einbindung der Systemlibraries, also in der #include <NAME> Notation, ist nicht 
 
 A 1 c
 --
-Es muss die input.o Datei als Abhängigkeit der main.c deklariert werden, damit MAKE die Abhängigkeiten korrekt auflösen kann.
+Es muss die input.o Datei als Abhängigkeit der main.c deklariert werden, damit MAKE die Abhängigkeiten korrekt auflösen kann. Also main.o: main.c //input.c// utils.h
