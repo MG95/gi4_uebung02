@@ -1,0 +1,19 @@
+CC = gcc 
+CFLAGS = -Wall -g
+LDFLAGS = 
+COMPRESS = gzip
+all: editor
+
+
+input.o: input.c types.h
+		$(CC) $(CFLAGS) -c input.c  $(LDFLAGS) -o input.o
+
+main.o:  main.c input.c utils.h
+		$(CC) $(CFLAGS) -c main.c $(LDFLAGS) -o main.o
+
+editor: main.o input.o
+	$(CC) $(CFLAGS) main.o input.o $(LDFLAGS) -o editor
+
+archive:
+	tar cvf editor.tar *.c *.f makefile
+	$(COMPRESS) editor.tar
